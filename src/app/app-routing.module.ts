@@ -4,13 +4,18 @@ import { RouterModule, Routes } from '@angular/router';
 
 // COMPONENTS
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import { SidebarComponent } from './shared-components/sidebar/sidebar.component';
 
 const routes: Routes = [
-  {path:'', component:HomePageComponent}
+  {
+    path: '',
+    component: SidebarComponent,
+    children: [{ path: 'home', component: HomePageComponent }],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

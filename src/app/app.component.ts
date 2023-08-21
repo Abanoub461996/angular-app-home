@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { ThemesService } from './core/services/themes.service';
+import { initFlowbite } from 'flowbite';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +13,7 @@ export class AppComponent {
   textDir: string = 'ltr';
 
   constructor(private translateService: TranslateService, private theme: ThemesService) {
+    this.translateService.use('en');
     this.translateService.onLangChange.subscribe((event: LangChangeEvent) => {
       if (event.lang == 'ar') {
         this.textDir = 'rtl';
@@ -22,5 +24,6 @@ export class AppComponent {
   }
   ngOnInit(){
     this.theme.setTheme('spotify');
+    initFlowbite();
   }
 }

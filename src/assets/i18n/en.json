@@ -1,4 +1,9 @@
 {
     "hello": "Hello",
-    "text": "Just Text"
+    "text": "Just Text",
+    "home": "Home",
+    "menu1":"Menu No. 1",
+    "miny-menu":"Miny Menu",
+    "help":"Help",
+    "settings":"Settings"
  }
