@@ -23,7 +23,7 @@ export class AppComponent {
     });
   }
   ngOnInit(){
-    this.theme.setTheme('spotify');
+    this.theme.setTheme('default');
     initFlowbite();
   }
 }

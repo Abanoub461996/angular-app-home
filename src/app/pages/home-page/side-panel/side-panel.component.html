@@ -1,0 +1,8 @@
+<div class="side__bar__container">
+  <div class="calendar__wrapper h-[25vh]"></div>
+  <div class="notifications__wrapper flex flex-col gap-2 overflow-y-auto max-h-[60vh]">
+    <div *ngFor="let item of notifications">
+      <app-side-panel-card [item]="item"></app-side-panel-card>
+    </div>
+  </div>
+</div>

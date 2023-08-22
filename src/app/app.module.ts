@@ -8,6 +8,8 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { SidebarComponent } from './shared-components/sidebar/sidebar.component';
+import { SidePanelComponent } from './pages/home-page/side-panel/side-panel.component';
+import { SidePanelCardComponent } from './pages/home-page/side-panel/side-panel-card/side-panel-card.component';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
 }
@@ -16,7 +18,9 @@ export function HttpLoaderFactory(http: HttpClient) {
   declarations: [
     AppComponent,
     HomePageComponent,
-    SidebarComponent
+    SidebarComponent,
+    SidePanelComponent,
+    SidePanelCardComponent
   ],
   imports: [
     BrowserModule,

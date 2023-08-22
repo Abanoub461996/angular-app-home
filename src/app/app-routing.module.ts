@@ -10,7 +10,7 @@ const routes: Routes = [
   {
     path: '',
     component: SidebarComponent,
-    children: [{ path: 'home', component: HomePageComponent }],
+    children: [{ path: '', component: HomePageComponent }],
   },
 ];
 

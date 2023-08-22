@@ -1,4 +1,4 @@
 .app__container{
     background-color: var(--background);
-    color: var(--primaryColor);
+    color: var(--textOnPrimary);
 }

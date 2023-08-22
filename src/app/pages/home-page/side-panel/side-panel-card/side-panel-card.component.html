@@ -1,0 +1,19 @@
+<div class="notification__card w-[90%] m-auto p-3 border-[1px] rounded-lg" [style]="getCardStyles()">
+  <div class="notification__title text-[14px] font-[600]">
+    {{ item.title }}
+  </div>
+  <div class="notification__time_range text-[12px] font-[400] mt-1">
+    {{ item.from }} - {{ item.to }}
+  </div>
+  <div class="notification__tail flex justify-between items-center mt-4">
+    <div class="notification_id flex mb-2">
+      <figure class="w-[2em] h-[2em] rounded-full overflow-hidden">
+        <img [src]="item.avatar" alt="" />
+      </figure>
+      <p *ngIf="item.name" translate="">
+        {{ item.name }}
+      </p>
+    </div>
+    <div class="notification__navigator">=></div>
+  </div>
+</div>
