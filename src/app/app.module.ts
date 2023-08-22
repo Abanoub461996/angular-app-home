@@ -10,6 +10,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { TableModule } from 'primeng/table';
 import {ButtonModule} from 'primeng/button';
+import {MatTableModule} from '@angular/material/table';
+
 // SERVICES and PROVIDERS
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 // COMPONENTS
@@ -29,39 +31,36 @@ export function HttpLoaderFactory(http: HttpClient) {
 }
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomePageComponent,
-    SidebarComponent,
-    SidePanelComponent,
-    SidePanelCardComponent,
-    ReadingsWrapperComponent,
-    UserReadingsComponent,
-    SystemReadingsComponent,
-    StatisticsComponent,
-    TableComponentComponent,
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    TableModule,
-    ButtonModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    DropdownModule,
-    TranslateModule.forRoot({
-      loader: {
-      provide: TranslateLoader,
-      useFactory: HttpLoaderFactory,
-      deps: [HttpClient]
-      }
-    }),
-    // TranslateLoader,
-    // TranslateHttpLoader,
-
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        HomePageComponent,
+        SidebarComponent,
+        SidePanelComponent,
+        SidePanelCardComponent,
+        ReadingsWrapperComponent,
+        UserReadingsComponent,
+        SystemReadingsComponent,
+        StatisticsComponent,
+    ],
+    providers: [],
+    bootstrap: [AppComponent],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        TableModule,
+        ButtonModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        HttpClientModule,
+        DropdownModule,
+        TranslateModule.forRoot({
+            loader: {
+                provide: TranslateLoader,
+                useFactory: HttpLoaderFactory,
+                deps: [HttpClient]
+            }
+        }),
+        TableComponentComponent
+    ]
 })
 export class AppModule { }
