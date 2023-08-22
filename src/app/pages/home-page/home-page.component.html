@@ -5,19 +5,15 @@
     <button (click)="changeLanguage('ar')">Arabic</button>
     <button (click)="changeLanguage('en')">English</button>
   </div>
-  <div class="app__outlet flex justify-between">
+  <div class="app__outlet flex justify-between h-[calc(100vh-5em)]">
     <div class="home__content bg-slate-100 w-[70%]">
-      <div class="flex  h-64">
-
+      <div class="home__readings">
+        <app-readings-wrapper></app-readings-wrapper>
       </div>
-      <div class="filters__panel">
-
-      </div>
-      <div class="table__view  h-64">
-
-      </div>
+      <div class="home__filters"></div>
+      <div class="home__table"></div>
     </div>
-    <div class="side__content h-64 w-[30%] border-s-[1px]">
+    <div class="side__content w-[30%] border-[1px]">
       <app-side-panel></app-side-panel>
     </div>
   </div>

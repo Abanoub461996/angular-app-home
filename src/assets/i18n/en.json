@@ -1,10 +1,16 @@
 {
-    "hello": "Hello",
-    "text": "Just Text",
-    "home": "Home",
-    "menu1":"Menu No. 1",
-    "miny-menu":"Miny Menu",
-    "help":"Help",
-    "settings":"Settings",
-    "truth-fact":"Some Truths"
- }
+  "hello": "Hello",
+  "text": "Just Text",
+  "home": "Home",
+  "menu1": "Menu No. 1",
+  "miny-menu": "Miny Menu",
+  "help": "Help",
+  "settings": "Settings",
+  "truth-fact": "Some Truths",
+  "Another Readings": "Another Readings",
+  "Option One": "Option One",
+  "First Person": "First Person",
+  "Reading 1": "Reading 1",
+  "Reading 2": "Reading 2",
+  "Reading 3": "Reading 3"
+}

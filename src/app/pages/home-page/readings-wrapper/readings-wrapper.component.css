@@ -1,0 +1,14 @@
+.readings__wrapper{
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+}
+.user__readings{
+    width: 33%;
+}
+.statistics{
+    width: 33%;
+}
+.total__readings{
+    width: 30%;
+}

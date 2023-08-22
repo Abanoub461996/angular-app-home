@@ -1,0 +1,16 @@
+.static__container{
+    background-color: var(--background);
+}
+.stats__option{
+    position: relative;
+}
+.stats__option::before{
+    content: "";
+    width: 5px;
+    height: 100%;
+    background-color: aqua;
+    position: absolute;
+    z-index: 99;
+    left: 0;
+    border-radius: 3px;
+}

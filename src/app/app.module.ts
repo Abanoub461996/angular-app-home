@@ -10,6 +10,10 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { SidebarComponent } from './shared-components/sidebar/sidebar.component';
 import { SidePanelComponent } from './pages/home-page/side-panel/side-panel.component';
 import { SidePanelCardComponent } from './pages/home-page/side-panel/side-panel-card/side-panel-card.component';
+import { ReadingsWrapperComponent } from './pages/home-page/readings-wrapper/readings-wrapper.component';
+import { UserReadingsComponent } from './pages/home-page/readings-wrapper/user-readings/user-readings.component';
+import { SystemReadingsComponent } from './pages/home-page/readings-wrapper/system-readings/system-readings.component';
+import { StatisticsComponent } from './pages/home-page/readings-wrapper/statistics/statistics.component';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
 }
@@ -20,7 +24,11 @@ export function HttpLoaderFactory(http: HttpClient) {
     HomePageComponent,
     SidebarComponent,
     SidePanelComponent,
-    SidePanelCardComponent
+    SidePanelCardComponent,
+    ReadingsWrapperComponent,
+    UserReadingsComponent,
+    SystemReadingsComponent,
+    StatisticsComponent
   ],
   imports: [
     BrowserModule,
