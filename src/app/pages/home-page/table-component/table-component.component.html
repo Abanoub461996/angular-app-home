@@ -102,13 +102,11 @@
       </ng-container>
       <ng-container *ngSwitchCase="'work'">
         <div class="flex items-center justify-between">
-          <div class="week__day p-1 rounded-sm bg-[#2385EA]" translate>sat</div>
-          <div class="week__day p-1 rounded-sm bg-[#2385EA]" translate>su</div>
-          <div class="week__day p-1 rounded-sm bg-[#2385EA]" translate>mo</div>
-          <div class="week__day p-1 rounded-sm bg-[#2385EA]" translate>tue</div>
-          <div class="week__day p-1 rounded-sm bg-[#2385EA]" translate>wed</div>
-          <div class="week__day p-1 rounded-sm bg-[#2385EA]" translate>thu</div>
-          <div class="week__day p-1 rounded-sm bg-[#2385EA]" translate>fri</div>
+          <ng-container *ngFor="let day of days, let i = index">
+
+            <div class="week__day p-1 rounded-sm w-[19px] h-[19px] flex justify-center items-center"
+            [ngStyle]="{'background-color':element[column.value][i].work ? '#2385EA' : '#F7F7FA', 'color':element[column.value][i].work ? '#fff' : '#BBBEC2' }">{{days[i]}}</div>
+          </ng-container>
         </div>
       </ng-container>
       <ng-container *ngSwitchDefault>

@@ -15,7 +15,7 @@ interface UserFile {
 export interface PeriodicElement {
   name: string;
   id?: string;
-  work: number[];
+  work: {work:boolean}[];
   email: string;
   file: UserFile;
 }
@@ -24,7 +24,7 @@ const ELEMENT_DATA_EN: PeriodicElement[] = [
   {
     id: 'ID-15877',
     name: 'Hydrogen',
-    work: [0, 1, 2, 3, 4, 5, 6],
+    work: [{work:true},{work:false},{work:true},{work:true},{work:true},{work:true},{work:false}],
     email: 'Example@company.com',
     file: {
       name: 'image.png',
@@ -36,7 +36,7 @@ const ELEMENT_DATA_EN: PeriodicElement[] = [
   {
     id: 'ID-15877',
     name: 'Helium',
-    work: [0, 1, 2, 3, 4, 5, 6],
+    work: [{work:true},{work:false},{work:true},{work:true},{work:true},{work:true},{work:false}],
     email: 'Example@company.com',
     file: {
       name: 'pdf.pdf',
@@ -48,7 +48,7 @@ const ELEMENT_DATA_EN: PeriodicElement[] = [
   {
     id: 'ID-15877',
     name: 'Lithium',
-    work: [0, 1, 2, 3, 4, 5, 6],
+    work: [{work:true},{work:false},{work:true},{work:true},{work:true},{work:true},{work:false}],
     email: 'Example@company.com',
     file: {
       name: 'image.png',
@@ -60,7 +60,7 @@ const ELEMENT_DATA_EN: PeriodicElement[] = [
   {
     id: 'ID-15877',
     name: 'Beryllium',
-    work: [0, 1, 2, 3, 4, 5, 6],
+    work: [{work:true},{work:false},{work:true},{work:true},{work:true},{work:true},{work:false}],
     email: 'Example@company.com',
     file: {
       name: 'image.png',
@@ -72,7 +72,7 @@ const ELEMENT_DATA_EN: PeriodicElement[] = [
   {
     id: 'ID-15877',
     name: 'Boron',
-    work: [0, 1, 2, 3, 4, 5, 6],
+    work: [{work:true},{work:false},{work:true},{work:true},{work:true},{work:true},{work:false}],
     email: 'Example@company.com',
     file: {
       name: 'image.png',
@@ -84,7 +84,7 @@ const ELEMENT_DATA_EN: PeriodicElement[] = [
   {
     id: 'ID-15877',
     name: 'Carbon',
-    work: [0, 1, 2, 3, 4, 5, 6],
+    work: [{work:true},{work:false},{work:true},{work:true},{work:true},{work:true},{work:false}],
     email: 'Example@company.com',
     file: {
       name: 'pdf.pdf',
@@ -96,7 +96,7 @@ const ELEMENT_DATA_EN: PeriodicElement[] = [
   {
     id: 'ID-15877',
     name: 'Nitrogen',
-    work: [0, 1, 2, 3, 4, 5, 6],
+    work: [{work:true},{work:false},{work:true},{work:true},{work:true},{work:true},{work:false}],
     email: 'Example@company.com',
     file: {
       name: 'pdf.pdf',
@@ -108,7 +108,7 @@ const ELEMENT_DATA_EN: PeriodicElement[] = [
   {
     id: 'ID-15877',
     name: 'Oxygen',
-    work: [0, 1, 2, 3, 4, 5, 6],
+    work: [{work:true},{work:false},{work:true},{work:true},{work:true},{work:true},{work:false}],
     email: 'Example@company.com',
     file: {
       name: 'image.png',
@@ -120,7 +120,7 @@ const ELEMENT_DATA_EN: PeriodicElement[] = [
   {
     id: 'ID-15877',
     name: 'Fluorine',
-    work: [0, 1, 2, 3, 4, 5, 6],
+    work: [{work:true},{work:false},{work:true},{work:true},{work:true},{work:true},{work:false}],
     email: 'Example@company.com',
     file: {
       name: 'image.png',
@@ -132,7 +132,7 @@ const ELEMENT_DATA_EN: PeriodicElement[] = [
   {
     id: 'ID-15877',
     name: 'Neon',
-    work: [0, 1, 2, 3, 4, 5, 6],
+    work: [{work:true},{work:false},{work:true},{work:true},{work:true},{work:true},{work:false}],
     email: 'Example@company.com',
     file: {
       name: 'image.png',
@@ -146,7 +146,7 @@ const ELEMENT_DATA_AR: PeriodicElement[] = [
   {
     id: 'ID-15877',
     name: 'إسم إفتراضي جديد مثال',
-    work: [0, 1, 2, 3, 4, 5, 6],
+    work: [{work:true},{work:false},{work:true},{work:true},{work:true},{work:true},{work:false}],
     email: 'Example@company.com',
     file: {
       name: 'واجهة المستخدم .png',
@@ -158,7 +158,7 @@ const ELEMENT_DATA_AR: PeriodicElement[] = [
   {
     id: 'ID-15877',
     name: 'اسم إفتراضي جديد',
-    work: [0, 1, 2, 3, 4, 5, 6],
+    work: [{work:true},{work:false},{work:true},{work:true},{work:true},{work:true},{work:false}],
     email: 'Example@company.com',
     file: {
       name: 'كتالوج الشركة.pdf',
@@ -170,7 +170,7 @@ const ELEMENT_DATA_AR: PeriodicElement[] = [
   {
     id: 'ID-15877',
     name: 'إسم إفتراضي جديد مثال',
-    work: [0, 1, 2, 3, 4, 5, 6],
+    work: [{work:true},{work:false},{work:true},{work:true},{work:true},{work:true},{work:false}],
     email: 'Example@company.com',
     file: {
       name: 'واجهة المستخدم .png',
@@ -182,7 +182,7 @@ const ELEMENT_DATA_AR: PeriodicElement[] = [
   {
     id: 'ID-15877',
     name: 'اسم إفتراضي جديد',
-    work: [0, 1, 2, 3, 4, 5, 6],
+    work: [{work:true},{work:false},{work:true},{work:true},{work:true},{work:true},{work:false}],
     email: 'Example@company.com',
     file: {
       name: 'واجهة المستخدم .png',
@@ -194,7 +194,7 @@ const ELEMENT_DATA_AR: PeriodicElement[] = [
   {
     id: 'ID-15877',
     name: 'اسم إفتراضي جديد',
-    work: [0, 1, 2, 3, 4, 5, 6],
+    work: [{work:true},{work:false},{work:true},{work:true},{work:true},{work:true},{work:false}],
     email: 'Example@company.com',
     file: {
       name: 'واجهة المستخدم .png',
@@ -206,7 +206,7 @@ const ELEMENT_DATA_AR: PeriodicElement[] = [
   {
     id: 'ID-15877',
     name: 'اسم إفتراضي جديد',
-    work: [0, 1, 2, 3, 4, 5, 6],
+    work: [{work:true},{work:false},{work:true},{work:true},{work:true},{work:true},{work:false}],
     email: 'Example@company.com',
     file: {
       name: 'كتالوج الشركة.pdf',
@@ -218,7 +218,7 @@ const ELEMENT_DATA_AR: PeriodicElement[] = [
   {
     id: 'ID-15877',
     name: 'اسم إفتراضي جديد',
-    work: [0, 1, 2, 3, 4, 5, 6],
+    work: [{work:true},{work:false},{work:true},{work:true},{work:true},{work:true},{work:false}],
     email: 'Example@company.com',
     file: {
       name: 'كتالوج الشركة.pdf',
@@ -230,7 +230,7 @@ const ELEMENT_DATA_AR: PeriodicElement[] = [
   {
     id: 'ID-15877',
     name: 'اسم إفتراضي جديد',
-    work: [0, 1, 2, 3, 4, 5, 6],
+    work: [{work:true},{work:false},{work:true},{work:true},{work:true},{work:true},{work:false}],
     email: 'Example@company.com',
     file: {
       name: 'واجهة المستخدم .png',
@@ -242,7 +242,7 @@ const ELEMENT_DATA_AR: PeriodicElement[] = [
   {
     id: 'ID-15877',
     name: 'اسم إفتراضي جديد',
-    work: [0, 1, 2, 3, 4, 5, 6],
+    work: [{work:true},{work:false},{work:true},{work:true},{work:true},{work:true},{work:false}],
     email: 'Example@company.com',
     file: {
       name: 'واجهة المستخدم .png',
@@ -254,7 +254,7 @@ const ELEMENT_DATA_AR: PeriodicElement[] = [
   {
     id: 'ID-15877',
     name: 'اسم إفتراضي جديد',
-    work: [0, 1, 2, 3, 4, 5, 6],
+    work: [{work:true},{work:false},{work:true},{work:true},{work:true},{work:true},{work:false}],
     email: 'Example@company.com',
     file: {
       name: 'واجهة المستخدم .png',
@@ -264,6 +264,9 @@ const ELEMENT_DATA_AR: PeriodicElement[] = [
     },
   },
 ];
+const DAYS_EN:string[]=['s','s','m','t','w','t','f']
+const DAYS_AR:string[]=['س','ح','ن','ث','ع','خ','ج']
+
 @Component({
   selector: 'app-table-component',
   templateUrl: './table-component.component.html',
@@ -285,6 +288,7 @@ export class TableComponentComponent {
   columnsToDisplay!: { name?: string; value: string }[];
   columnIds!: string[];
   data!: PeriodicElement[];
+  days!:string[];
 
   constructor(private translateService: TranslateService) {}
 
@@ -302,6 +306,7 @@ export class TableComponentComponent {
           { name: 'اختيارات', value: 'actions' },
         ];
         this.data = ELEMENT_DATA_AR;
+        this.days= DAYS_AR;
       } else {
         this.displayedColumns = [
           { name: 'Id No', value: 'id' },
@@ -312,6 +317,8 @@ export class TableComponentComponent {
           { name: 'Actions', value: 'actions' },
         ];
         this.data = ELEMENT_DATA_EN;
+        this.days= DAYS_EN;
+
       }
       this.columnsToDisplay == this.displayedColumns.slice();
       this.columnIds = this.displayedColumns.map((column) => column.name);
