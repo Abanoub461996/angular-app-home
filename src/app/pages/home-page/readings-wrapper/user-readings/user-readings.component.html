@@ -1,8 +1,11 @@
 <div
   class="user__readings__container p-3 border-[1px] rounded-xl min-h-full text-[14px] font-[500]"
 >
-  <div class="user__readings__header flex justify-between items-center">
+  <div class="user__readings__header flex justify-between items-center border-0">
     <div translate>First Person</div>
+    <div class="card flex justify-content-center">
+      <p-dropdown [options]="periods" [(ngModel)]="selectedPeriod" [optionLabel]="getDropDownName()" class="prime-dropdown"></p-dropdown>
+  </div>
   </div>
   <div class="flex items-stretch">
     <div class="user__readings__content flex flex-col h-full justify-between">
