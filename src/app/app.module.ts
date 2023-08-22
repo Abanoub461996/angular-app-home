@@ -9,7 +9,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { TableModule } from 'primeng/table';
-
+import {ButtonModule} from 'primeng/button';
 // SERVICES and PROVIDERS
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 // COMPONENTS
@@ -45,6 +45,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     BrowserModule,
     FormsModule,
     TableModule,
+    ButtonModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
