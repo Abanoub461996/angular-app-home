@@ -1,120 +1,179 @@
-<table mat-table [dataSource]="data" class="mat-elevation-z8 w-[96%] m-auto">
-  <ng-container
-    [matColumnDef]="column.name"
-    *ngFor="let column of displayedColumns"
-    [ngSwitch]="column.value"
-  >
-    <th mat-header-cell *matHeaderCellDef>{{ column.name }}</th>
-    <td mat-cell *matCellDef="let element" [ngSwitch]="column.value">
+<div class="home__filters px-4 flex justify-between items-center">
+  <div class="filters flex justify-start items-center gap-2 w-[66%]">
+    <mat-form-field>
+      <input
+        matInput
+        (keyup)="applyFilter($event)"
+        placeholder="Search..."
+        #input
+      />
+    </mat-form-field>
+    <div class="advanced_filters">||</div>
+
+    <div class="advanced_filters">||</div>
+  </div>
+  <div class="add__new">
+    <button class="add_btn" translate="add">add</button>
+  </div>
+</div>
+<div class="overflow-y-scroll h-[45vh] m-4 main__table">
+  <table mat-table [dataSource]="data" class="mat-elevation-z8 w-[96%] m-auto" matSort>
+    <ng-container
+      [matColumnDef]="column.name"
+      *ngFor="let column of displayedColumns"
+      [ngSwitch]="column.value"
+      matSort
+    >
       <ng-container *ngSwitchCase="'file'">
-        <a
-          [href]="element[column.value].url"
-          target="_blank"
-          class="flex justify-start gap-2 items-center"
-        >
-          <ng-container [ngSwitch]="element[column.value].type">
-            <img
-              *ngSwitchCase="'image'"
-              [src]="element[column.value].url"
-              alt="Image"
-              class="w-[2em] h-[2em] rounded-md cursor-pointer"
-            />
-            <div
-              *ngSwitchCase="'pdf'"
-              class="w-[2em] h-[2em] rounded-md flex justify-center items-center bg-[#0771DE1A] cursor-pointer"
-            >
-              <svg
-                width="14"
-                height="14"
-                viewBox="0 0 14 14"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+        <th mat-header-cell *matHeaderCellDef>{{ column.name }}</th>
+        <td mat-cell *matCellDef="let element" [ngSwitch]="column.value">
+          <a
+            [href]="element[column.value].url"
+            target="_blank"
+            class="flex justify-start gap-2 items-center"
+          >
+            <ng-container [ngSwitch]="element[column.value].type">
+              <img
+                *ngSwitchCase="'image'"
+                [src]="element[column.value].url"
+                alt="Image"
+                class="w-[2em] h-[2em] rounded-md cursor-pointer"
+              />
+              <div
+                *ngSwitchCase="'pdf'"
+                class="w-[2em] h-[2em] rounded-md flex justify-center items-center bg-[#0771DE1A] cursor-pointer"
               >
-                <path
-                  d="M5.08334 7.11084H8.96251M5.08334 9.32751H7.51059M6.19168 3.67501H8.40834C9.51668 3.67501 9.51668 3.12084 9.51668 2.56668C9.51668 1.45834 8.96251 1.45834 8.40834 1.45834H6.19168C5.63751 1.45834 5.08334 1.45834 5.08334 2.56668C5.08334 3.67501 5.63751 3.67501 6.19168 3.67501Z"
-                  stroke="#0771DE"
-                  stroke-width="0.83125"
-                  stroke-miterlimit="10"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M9.51667 2.57748C11.362 2.67723 12.2875 3.35886 12.2875 5.8914V9.2164C12.2875 11.4331 11.7333 12.5414 8.9625 12.5414H5.6375C2.86667 12.5414 2.3125 11.4331 2.3125 9.2164V5.8914C2.3125 3.3644 3.23796 2.67723 5.08333 2.57748"
-                  stroke="#0771DE"
-                  stroke-width="0.83125"
-                  stroke-miterlimit="10"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 14 14"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5.08334 7.11084H8.96251M5.08334 9.32751H7.51059M6.19168 3.67501H8.40834C9.51668 3.67501 9.51668 3.12084 9.51668 2.56668C9.51668 1.45834 8.96251 1.45834 8.40834 1.45834H6.19168C5.63751 1.45834 5.08334 1.45834 5.08334 2.56668C5.08334 3.67501 5.63751 3.67501 6.19168 3.67501Z"
+                    stroke="#0771DE"
+                    stroke-width="0.83125"
+                    stroke-miterlimit="10"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M9.51667 2.57748C11.362 2.67723 12.2875 3.35886 12.2875 5.8914V9.2164C12.2875 11.4331 11.7333 12.5414 8.9625 12.5414H5.6375C2.86667 12.5414 2.3125 11.4331 2.3125 9.2164V5.8914C2.3125 3.3644 3.23796 2.67723 5.08333 2.57748"
+                    stroke="#0771DE"
+                    stroke-width="0.83125"
+                    stroke-miterlimit="10"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+            </ng-container>
+            <div class="flex flex-col">
+              <div>{{ element[column.value].name }}</div>
+              <div>{{ element[column.value].size }} mb</div>
             </div>
-          </ng-container>
-          <div class="flex flex-col">
-            <div>{{ element[column.value].name }}</div>
-            <div>{{ element[column.value].size }} mb</div>
-          </div>
-        </a>
+          </a>
+        </td>
       </ng-container>
       <ng-container *ngSwitchCase="'actions'">
-        <div class="cursor-pointer w-3 m-auto flex justify-center">
-          <svg
-            width="3"
-            height="13"
-            viewBox="0 0 3 13"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <ellipse
-              cx="1.5"
-              cy="11.1"
-              rx="1.5"
-              ry="1.5"
-              transform="rotate(90 1.5 11.1)"
-              fill="#92A1AD"
-            />
-            <ellipse
-              cx="1.5"
-              cy="6.30002"
-              rx="1.5"
-              ry="1.5"
-              transform="rotate(90 1.5 6.30002)"
-              fill="#92A1AD"
-            />
-            <ellipse
-              cx="1.5"
-              cy="1.5"
-              rx="1.5"
-              ry="1.5"
-              transform="rotate(90 1.5 1.5)"
-              fill="#92A1AD"
-            />
-          </svg>
-        </div>
+        <th mat-header-cell *matHeaderCellDef>{{ column.name }}</th>
+        <td mat-cell *matCellDef="let element">
+          <div class="cursor-pointer w-3 m-auto flex justify-center">
+            <svg
+              width="3"
+              height="13"
+              viewBox="0 0 3 13"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <ellipse
+                cx="1.5"
+                cy="11.1"
+                rx="1.5"
+                ry="1.5"
+                transform="rotate(90 1.5 11.1)"
+                fill="#92A1AD"
+              />
+              <ellipse
+                cx="1.5"
+                cy="6.30002"
+                rx="1.5"
+                ry="1.5"
+                transform="rotate(90 1.5 6.30002)"
+                fill="#92A1AD"
+              />
+              <ellipse
+                cx="1.5"
+                cy="1.5"
+                rx="1.5"
+                ry="1.5"
+                transform="rotate(90 1.5 1.5)"
+                fill="#92A1AD"
+              />
+            </svg>
+          </div>
+        </td>
       </ng-container>
+      
       <ng-container *ngSwitchCase="'name'">
-        <dev
-          mat-raised-button
-          [matTooltip]="element[column.value]"
-          matTooltipPosition="above"
-        >
-          {{ element[column.value] }}
-        </dev>
+        <th mat-header-cell *matHeaderCellDef  mat-sort-header>{{ column.name }}</th>
+        <td mat-cell *matCellDef="let element">
+          <dev
+            mat-raised-button
+            [matTooltip]="element[column.value]"
+            matTooltipPosition="above"
+          >
+            {{ element[column.value] }}
+          </dev>
+        </td>
       </ng-container>
       <ng-container *ngSwitchCase="'work'">
-        <div class="flex items-center justify-between">
-          <ng-container *ngFor="let day of days, let i = index">
-
-            <div class="week__day p-1 rounded-sm w-[19px] h-[19px] flex justify-center items-center"
-            [ngStyle]="{'background-color':element[column.value][i].work ? '#2385EA' : '#F7F7FA', 'color':element[column.value][i].work ? '#fff' : '#BBBEC2' }">{{days[i]}}</div>
-          </ng-container>
-        </div>
+        <th mat-header-cell *matHeaderCellDef>{{ column.name }}</th>
+        <td mat-cell *matCellDef="let element" [ngSwitch]="column.value">
+          <div class="flex items-center justify-between">
+            <ng-container *ngFor="let day of days; let i = index">
+              <div
+                class="week__day p-1 rounded-sm w-[19px] h-[19px] flex justify-center items-center"
+                [ngStyle]="{
+                  'background-color': element[column.value][i].work
+                    ? '#2385EA'
+                    : '#F7F7FA',
+                  color: element[column.value][i].work ? '#fff' : '#BBBEC2'
+                }"
+              >
+                {{ days[i] }}
+              </div>
+            </ng-container>
+          </div>
+        </td>
       </ng-container>
       <ng-container *ngSwitchDefault>
-        {{ element[column.value] }}
-      </ng-container>
-    </td>
-  </ng-container>
+        <th mat-header-cell *matHeaderCellDef>{{ column.name }}</th>
+        <td mat-cell *matCellDef="let element" [ngSwitch]="column.value">
+          {{ element[column.value] }}
+        </td></ng-container
+      >
+    </ng-container>
 
-  <tr mat-header-row *matHeaderRowDef="columnIds"></tr>
-  <tr mat-row *matRowDef="let row; columns: columnIds"></tr>
-</table>
+    <tr mat-header-row *matHeaderRowDef="columnIds"></tr>
+    <tr mat-row *matRowDef="let row; columns: columnIds"></tr>
+  </table>
+</div>
+<div class="flex justify-between items-center w-[100%]">
+  <p-paginator
+    [rows]="10"
+    [totalRecords]="250"
+    [pageLinkSize]="5"
+    [showFirstLastIcon]="false"
+  ></p-paginator>
+  <div class="flex justify-center items-center gap-2 me-3">
+    <p class="p-0" translate>Showing</p>
+    <p-dropdown
+      [options]="[5, 10, 20]"
+      [(ngModel)]="selectedPageItems"
+      class="prime-dropdown"
+    ></p-dropdown>
+    <p class="p-0" translate>Of 250</p>
+  </div>
+</div>

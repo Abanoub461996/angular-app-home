@@ -1,0 +1,73 @@
+.p-paginator.p-component {
+  background-color: inherit;
+}
+.p-ripple.p-element.p-paginator-prev.p-paginator-element {
+  direction: rtl !important;
+}
+
+/* Filter */
+.mat-mdc-form-field {
+  width: 50%;
+  background-color: var(--background);
+  border: 1px solid #0000001a;
+  border-radius: 0.5em;
+  overflow: hidden;
+  font-size: 14px;
+}
+.mat-mdc-form-field-infix {
+  background-color: var(--background);
+}
+.mdc-text-field--filled {
+  background-color: inherit !important;
+}
+.mat-mdc-form-field-focus-overlay {
+  background-color: inherit;
+}
+.mat-mdc-text-field-wrapper.mdc-text-field {
+  border: none;
+  padding: 0.5em 1em !important;
+  will-change: unset;
+  position: inherit;
+}
+.mat-mdc-form-field-subscript-wrapper {
+  display: none;
+  border: none;
+}
+.mat-mdc-form-field-infix {
+  padding: 0 !important;
+  min-height: auto !important;
+  display: inherit;
+}
+.mdc-text-field--no-label:not(.mdc-text-field--textarea)
+  .mat-mdc-form-field-input-control.mdc-text-field__input,
+.mat-mdc-text-field-wrapper .mat-mdc-form-field-input-control {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: normal;
+}
+.advanced_filters {
+  padding: 0.5em 1em;
+  background-color: var(--background);
+  border: 1px solid #0000001a;
+  border-radius: 0.5em;
+  overflow: hidden;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: normal;
+  cursor: pointer;
+}
+.add__new .add_btn {
+  padding: 0.5em 3em;
+  border: 1px solid #0000001a;
+  border-radius: 0.5em;
+  overflow: hidden;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: normal;
+  background-color: var(--primaryColor);
+}
+
+/* Table  */
+.main__table table {
+  box-shadow: none;
+}

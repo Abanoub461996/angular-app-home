@@ -10,7 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { TableModule } from 'primeng/table';
 import {ButtonModule} from 'primeng/button';
-import {MatTableModule} from '@angular/material/table';
+import { ChartModule } from 'primeng/chart';
 
 // SERVICES and PROVIDERS
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -53,6 +53,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         BrowserAnimationsModule,
         HttpClientModule,
         DropdownModule,
+        ChartModule,
         TranslateModule.forRoot({
             loader: {
                 provide: TranslateLoader,

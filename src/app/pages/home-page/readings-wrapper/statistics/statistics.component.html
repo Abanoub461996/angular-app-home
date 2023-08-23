@@ -1,17 +1,25 @@
-<div class="static__container p-3 border-[1px] rounded-xl min-h-full text-[14px] font-[500]">
-    <p class="header w-full" translate>Statistics</p>
-    <div class="graph">
+<div
+  class="static__container p-3 border-[1px] rounded-xl min-h-full text-[14px] font-[500]"
+>
+  <p class="header w-full" translate>Statistics</p>
+  <div class="graph h-8">
+    <div style="display: block">
+            <p-chart class="inner__chart" type="doughnut" [data]="data">
 
-    </div>
-    <div class="flex justify-evenly">
-        <div class="stats__option option1 w-[calc(45%)] ps-4">
-            <div class="m-0">108</div>
-            <div class="m-0" translate>Option One</div>
-        </div>
-        <div class="stats__option option2 w-[calc(45%)] ps-4">
-            <div class="m-0">108</div>
-            <div class="m-0" translate>Option One</div>
-        </div>
+                <div >158</div>
+                <div translate>Device</div>
+            </p-chart>
+      </div>
 
+  </div>
+  <div class="flex justify-evenly">
+    <div class="stats__option option1 w-[calc(45%)] ps-4">
+      <div class="m-0">108</div>
+      <div class="m-0" translate>Option One</div>
     </div>
+    <div class="stats__option option2 w-[calc(45%)] ps-4">
+      <div class="m-0">108</div>
+      <div class="m-0" translate>Option One</div>
+    </div>
+  </div>
 </div>

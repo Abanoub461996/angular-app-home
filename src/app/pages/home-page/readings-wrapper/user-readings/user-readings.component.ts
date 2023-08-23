@@ -19,11 +19,7 @@ export class UserReadingsComponent {
   periods: Period[] | undefined;
   public lang!: string;
   selectedPeriod: Period | undefined;
-  readings: Reading[] = [
-    { title: 'reading 1', value: 254 },
-    { title: 'reading 2', value: 120 },
-    { title: 'reading 3', value: 25 },
-  ];
+
   constructor(private translateService: TranslateService) {}
   ngOnInit() {
     this.periods = [
